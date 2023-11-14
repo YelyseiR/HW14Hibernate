@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </Console>
+
+        <File name="AppFile" fileName="logs/app.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
+
+        <File name="FlywayMigrationFile" fileName="logs/flyway-migration.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
+
+        <File name="ClientEntityFile" fileName="logs/client-entity.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
+
+        <File name="PlanetEntityFile" fileName="logs/planet-entity.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.example.App" level="info">
+            <AppenderRef ref="AppFile"/>
+        </Logger>
+
+        <Logger name="com.example.database.utils.FlywayMigration" level="info">
+            <AppenderRef ref="FlywayMigrationFile"/>
+        </Logger>
+
+        <Logger name="com.example.database.entities.Client" level="info">
+            <AppenderRef ref="ClientEntityFile"/>
+        </Logger>
+
+        <Logger name="com.example.database.entities.Planet" level="info">
+            <AppenderRef ref="PlanetEntityFile"/>
+        </Logger>
+
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

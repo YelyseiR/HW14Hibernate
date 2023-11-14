@@ -1,0 +1,5 @@
+CREATE TABLE planets
+(
+    id   VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(501) NOT NULL
+);
